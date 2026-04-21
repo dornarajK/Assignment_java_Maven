@@ -13,6 +13,7 @@ import java.awt.*;
 
 import javafx.scene.control.Label;
 import java.util.List;
+import java.util.Objects;
 import java.util.Vector;
 import javafx.geometry.Insets;
 public class CurrencyView {
@@ -25,6 +26,7 @@ public class CurrencyView {
 
 
     public void start(Stage stage) {
+        System.out.println("VIEW STARTED");
         // imput Amaunt
         Label amauntLable = new Label("Amaunt: ");
         TextField  amauntField = new TextField();
@@ -48,7 +50,7 @@ public class CurrencyView {
 
         // Get data from controller
         List<Currency> list = controller.getCurrencies();
-
+        System.out.println(list);
         // for-each loop to add currencies to dropdown box
         for(Currency c : list){
             String code = c.getAbbreviation();
@@ -89,7 +91,7 @@ public class CurrencyView {
         root.setPadding(new Insets(20));
 
         Scene scene = new Scene(root, 400, 300);
-        scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/styles.css")).toExternalForm());
         stage.setTitle("Currency Converter");
         stage.setScene(scene);
         stage.show();
