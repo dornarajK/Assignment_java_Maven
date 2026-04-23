@@ -6,7 +6,7 @@ import org.example.LayoutsbuildingtheUI_6_2.View.CurrencyView;
 
 public class Main extends Application {
 
-
+// mvn javafx:run
     @Override
     public void start(Stage stage) {
         CurrencyView view = new CurrencyView();
